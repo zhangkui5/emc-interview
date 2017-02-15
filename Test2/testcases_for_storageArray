@@ -1,0 +1,114 @@
+test cases for storage array
+------------------------------------------------------
+
+test case name
+    create one LUN
+input/operation
+    create one LUN
+expected output
+    create LUN successfully
+    one LUN number is returned
+    storage LUN size is minus by 1
+
+
+test case name
+    create multiple LUNs
+input/operation
+    create 3 LUNs
+    input LUN size
+    input LUN number 3
+expected output
+    LUNs created successfully
+    LUN number is returned
+    storage LUN size is minus by 3
+                                                           
+
+test case name
+    resize one LUN
+input/operation
+    input LUN number
+    input new LUN size
+expected output
+    resize succeed
+    LUN's size is changed to new value
+               
+               
+test case name
+    resize one LUN with maximum size
+input/operation
+    input LUN number
+    input maximum LUN size
+expected output
+    resize succeed
+    LUN's size is changed to new value               
+                                                           
+
+test case name
+    retrieve LUN information
+input/operation
+    input one existing LUN number
+expected output
+    LUN number, LUN size are returned
+    
+    
+test case name
+    retrieve LUN information multiple times
+input/operation
+    repeat retrieve LUN information
+expected output
+    returned information should be same during multiple operation
+
+
+test case name
+    retrieve LUN info with invalid number
+input/operation
+    input one invalid LUN number
+expected output
+    proper message is returned indicated that LUN number is invalid
+
+
+test case name
+    concurrent request for create LUN
+input/operation
+    write script to create LUN concurrent
+expected output
+    every create operation succeed
+
+
+test case name
+    export a LUN
+input/operation
+    select one LUN to export
+expected output
+    LUN status is changed properly
+    export operation succeed
+    can access exported LUN in host
+    
+
+test case name
+    un-export a LUN
+input/operation
+    select one LUN in host, then un-export
+expected output
+    selected LUN's status is changed
+    can not access LUN in host
+     
+
+test case name
+    remove an un-export LUN
+input/operation
+    remove an un-export LUN
+expected output
+    LUN is removed
+    can not access LUN in host
+    
+    
+test case name
+    performance testing
+input/operation
+    create one LUN and record operation time
+    write script to create lots of LUN
+    create another LUN and record operation time
+expected output
+    operation time should not have obvious different
+    
