@@ -1,0 +1,34 @@
+INTRODUCTION
+------------
+One simple implementation for storage array simulator. REST API is provided for create LUN, remove LUN and retrieve the information of 
+storage array. Also there is one test implementation with REST client.
+
+
+REQUIREMENTS
+------------
+Require following to run this program:
+Name         Version
+JDK          1.8.0_121 or higher
+Tomcat       7.0.75
+Jersey       1.19.1
+
+
+INSTALLATION
+------------
+Install jdk 1.8.0_121
+Install Tomcat 7.0.75
+Copy Test3.war to $TOMCAT_HOME/webapps
+Start Tomcat server
+
+
+USAGE
+------------
+#REST API for create LUN, LUN number is returned
+http://localhost:8080/Test3/rest/Storage/createLUN
+
+#REST API for remove LUN, LUNNubmer is the LUN id to be removed.
+#LUNNubmer range is 0-99
+http://localhost:8080/Test3/rest/Storage/removeLUN/{LUNNubmer}
+
+#REST API for get storage information. return value is how many storage unit is allocated to LUN
+http://localhost:8080/Test3/rest/Storage/getStorageInfo
